@@ -1,2 +1,2 @@
-# Eterniox-Dotfiles
+# Eterniox Dotfiles
 Dotfiles that I use.
