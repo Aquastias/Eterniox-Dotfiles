@@ -1,0 +1,71 @@
+[user]
+email = aquastias@protonmail.com
+name = Mlakar Alexandru Laurian
+
+[alias]
+# Discard duplicate leading “git” (e.g. “git git status”)
+git = "!git"
+
+# Alias
+aliases = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+
+# The basic aliases
+sts = status
+all = add --all
+cm = commit -m
+cp = cherry-pick
+save = ! git add -A && ! git commit -m
+
+# Branch
+br = branch
+brdel = branch -D
+brl = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+groom = "!f() { git branch --merged | egrep -v \"(^\\*|main|master|develop)\" | xargs git branch -d; }; f"
+local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+recent-branches = !git branch --sort=-committerdate | head
+
+# Checkout
+co = checkout
+com = checkout master
+cod = checkout develop
+
+# Syncing
+pur = pull --rebase
+prune = fetch --prune
+
+# Rebase
+ri = rebase -i
+rb = "!sh -c \"git rebase -i HEAD~$1\" -"
+rc = rebase --continue
+ra = rebase --abort
+rs = rebase --skip
+re = rebase --exit
+rod = rebase origin/develop
+rom = rebase origin/master
+
+# Stash
+poop = stash pop
+wip = commit -m "WIP" -n
+stsh = stash save --include-untracked
+
+# Push
+force = push --force-with-lease
+fam = "!f() { git add -A && git amend && git force; }; f"
+
+# Mistake
+abort = checkout -- .
+wait = reset HEAD
+undo = reset --soft HEAD^
+amend = commit --amend --no-edit
+
+# Diff
+changes = diff --name-status
+conflicts = diff --name-only --diff-filter=U
+
+# Log
+graph = log --oneline --graph --decorate
+lg = log --pretty=oneline --abbrev-commit --graph --decorate
+ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
