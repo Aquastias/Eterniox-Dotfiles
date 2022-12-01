@@ -1,2 +1,7 @@
 # Eterniox Dotfiles
-Dotfiles that I use.
+
+Configs, aliases and functions related to:
+
+- bash
+- zsh
+- git
