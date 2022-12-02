@@ -36,7 +36,7 @@ if [[ $(ls -A $ZSH_FUNCTIONS_PATH | wc -l) -gt 0 ]]; then
 fi
 
 # Aliases
-[[ -f $ZSH_ALIASES ]] || source $ZSH_ALIASES
+[[ -f $ZSH_ALIASES ]] && source $ZSH_ALIASES
 
 # START - zplug
 # Check if zplug is installed.
