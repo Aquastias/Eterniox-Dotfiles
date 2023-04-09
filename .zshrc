@@ -5,7 +5,6 @@ ZPLUG_INIT_PATH="/usr/share/zsh/scripts/zplug/init.zsh"
 ZSH_FUNCTIONS_PATH="$HOME/.zfunc"
 ZSH_ALIASES="$HOME/.zsh_aliases"
 
-
 # Use vi keybindings even if our EDITOR is set to vi.
 bindkey -e
 
