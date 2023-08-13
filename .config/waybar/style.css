@@ -1,0 +1,149 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 18px;
+    min-height: 10px;
+}
+
+@import "themes/Tokyo-Night.css";
+
+window#waybar {
+    background: @bar-bg;
+}
+
+tooltip {
+    background: @tool-bg;
+    color: @tool-color;
+    border-radius: 44px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @tool-border;
+}
+
+#workspaces button {
+    box-shadow: none;
+	text-shadow: none;
+    padding: 0px;
+    border-radius: 19px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: @wb-color;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.active {
+    background: @wb-act-bg;
+    color: @wb-act-color;
+    margin-left: 6px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 6px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: @wb-hvr-bg;
+    color: @wb-hvr-color;
+    padding-left: 6px;
+    padding-right: 6px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button {
+    box-shadow: none;
+	text-shadow: none;
+    padding: 0px;
+    border-radius: 19px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: @wb-color;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button.active {
+    background: @wb-act-bg;
+    color: @wb-act-color;
+    margin-left: 6px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 6px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover {
+    background: @wb-hvr-bg;
+    color: @wb-hvr-color;
+    padding-left: 6px;
+    padding-right: 6px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#cpu,
+#memory,
+#clock,
+#workspaces,
+#window,
+#taskbar,
+#network,
+#bluetooth,
+#pulseaudio,
+#mpris,
+#custom-updates,
+#custom-wallchange,
+#custom-mode,
+#custom-cliphist,
+#custom-power,
+#custom-wbar,
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#tray {
+    color: @main-color;
+    background: @main-bg;
+    opacity: 1;
+    margin: 8px 0px 8px 0px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+#workspaces,
+#taskbar {
+    padding: 0px;
+}
+
+#custom-r_end {
+    border-radius: 0px 44px 44px 0px;
+    margin-right: 19px;
+    padding-right: 6px;
+}
+
+#custom-l_end {
+    border-radius: 44px 0px 0px 44px;
+    margin-left: 19px;
+    padding-left: 6px;
+}
+
+#custom-sr_end {
+    border-radius: 0px;
+    margin-right: 19px;
+    padding-right: 6px;
+}
+
+#custom-sl_end {
+    border-radius: 0px;
+    margin-left: 19px;
+    padding-left: 6px;
+}

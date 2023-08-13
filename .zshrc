@@ -20,7 +20,7 @@ promptinit
 
 # Use modern completion system.
 autoload -Uz compinit
-compinit
+compinit -C
 
 # Find compinstall statements and update them.
 zstyle :compinstall filename '$HOME/.zshrc'
@@ -48,20 +48,25 @@ fi
 source $ZPLUG_INIT_PATH
 
 # Plugins
-zplug "junegunn/fzf"
-zplug "lukechilds/zsh-nvm"
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/nvm", from:oh-my-zsh
 zplug "plugins/alias-finder", from:oh-my-zsh
 zplug "plugins/archlinux", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
+zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/git-auto-fetch", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/man", from:oh-my-zsh
 zplug "plugins/rebar", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/systemd", from:oh-my-zsh
+zplug "plugins/urltools", from:oh-my-zsh
+zplug "plugins/zsh-interactive-cd", from:oh-my-zsh
+zplug "plugins/zsh-navigation-tools", from:oh-my-zsh
 zplug "zplug/zplug", hook-build: "zplug --self-manage"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
@@ -69,7 +74,8 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 # Theme
-zplug "themes/robbyrussell", from:oh-my-zsh
+# zplug "themes/robbyrussell", from:oh-my-zsh
+zplug "themes/half-life", from:oh-my-zsh
 
 # Install/load new plugins when zsh is started or reloaded.
 if ! zplug check --verbose; then
@@ -83,3 +89,6 @@ fi
 
 zplug load
 # END - zplug
+
+#Display Pokemon
+pokemon-colorscripts --no-title -r 1,3,6
