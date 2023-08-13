@@ -47,6 +47,9 @@ fi
 # Essential
 source $ZPLUG_INIT_PATH
 
+autoload colors && colors
+setopt prompt_subst
+
 # Plugins
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/nvm", from:oh-my-zsh
@@ -75,7 +78,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 # Theme
 # zplug "themes/robbyrussell", from:oh-my-zsh
-zplug "themes/half-life", from:oh-my-zsh
+zplug "themes/half-life", from:oh-my-zsh, defer:2
 
 # Install/load new plugins when zsh is started or reloaded.
 if ! zplug check --verbose; then
@@ -87,8 +90,9 @@ if ! zplug check --verbose; then
   fi
 fi
 
+zplug check || zplug install
 zplug load
 # END - zplug
 
-#Display Pokemon
+# Display Pokemon
 pokemon-colorscripts --no-title -r 1,3,6
